@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>$(NetCoreTargetVersion)</TargetFramework>
+	</PropertyGroup>
+
+  <ItemGroup>    
+    <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="$(HellangMiddlewareProblemDetails)" />
+    <PackageReference Include="MediatR" Version="$(MediatR)" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="$(MediatR)" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="$(MicrosoftAspNetCoreMvcNewtonsoftJson)" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="$(MicrosoftAspNetCoreMvcVersioning)" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="$(MicrosoftAspNetCoreMvcVersioning)" />   
+    <PackageReference Include="Scrutor" Version="$(Scrutor)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\Sat.Recruitment.Application\Sat.Recruitment.Application.csproj" />
+    <ProjectReference Include="..\..\Domain\Sat.Recruitment.Domain.Core\Sat.Recruitment.Domain.Core.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Sat.Recruitment.Infrastructure.Data\Sat.Recruitment.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Sat.Recruitment.Infrastructure.Statements\Sat.Recruitment.Infrastructure.Statements.csproj" />
+  </ItemGroup>
+
+</Project>

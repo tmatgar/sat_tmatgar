@@ -1,0 +1,40 @@
+﻿<Project>
+	<PropertyGroup Label="SDK Versions">
+		<NetStandardTargetVersion>netstandard2.1</NetStandardTargetVersion>
+		<NetCoreTargetVersion>netcoreapp3.1</NetCoreTargetVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Label="FrameworkReferences">
+		<MicrosoftAspNetCoreApp>Microsoft.AspNetCore.App</MicrosoftAspNetCoreApp>
+	</PropertyGroup>
+
+  <PropertyGroup Label="Package Versions">
+    <AcheveTestHost>3.0.0</AcheveTestHost>        
+    <FluentAssertions>5.10.0</FluentAssertions>
+    <FluentValidationAspNetCore>8.6.0</FluentValidationAspNetCore>
+    <HellangMiddlewareProblemDetails>4.0.0</HellangMiddlewareProblemDetails>    
+    <MediatR>8.0.0</MediatR>    
+    <MicrosoftAspNetCoreMvcNewtonsoftJson>3.1.4</MicrosoftAspNetCoreMvcNewtonsoftJson>
+    <MicrosoftAspNetCoreMvcVersioning>4.1.0</MicrosoftAspNetCoreMvcVersioning>
+    <MicrosoftAspNetCoreSignalRCore>1.1.0</MicrosoftAspNetCoreSignalRCore>   
+    <MicrosoftAspNetCoreTestHost>3.1.1</MicrosoftAspNetCoreTestHost>   
+    <MicrosoftExtensionsConfigurationAbstractions>3.1.10</MicrosoftExtensionsConfigurationAbstractions>
+    <MicrosoftExtensionsConfigurationBinder>3.1.10</MicrosoftExtensionsConfigurationBinder>
+    <MicrosoftExtensionsDependencyInjectionAbstractions>3.1.10</MicrosoftExtensionsDependencyInjectionAbstractions>
+    <MicrosoftExtensionsHosting>3.1.10</MicrosoftExtensionsHosting>
+    <MicrosoftExtensionsHttp>3.1.10</MicrosoftExtensionsHttp>
+    <MicrosoftExtensionsOptions>3.1.10</MicrosoftExtensionsOptions>
+    <MicrosoftIdentityModelClientsActiveDirectory>5.2.8</MicrosoftIdentityModelClientsActiveDirectory>   
+    <MicrosoftIORecyclableMemoryStream>1.3.5</MicrosoftIORecyclableMemoryStream>
+    <MicrosoftNETTestSdk>16.2.0</MicrosoftNETTestSdk>   
+    <NewtonsoftJson>12.0.3</NewtonsoftJson>
+    <Respawn>3.2.0</Respawn>   
+    <Scrutor>3.1.0</Scrutor>
+    <SwashbuckleAspNetCore>5.0.0</SwashbuckleAspNetCore>    
+    <xunit>2.4.1</xunit>
+    <xunitrunnervisualstudio>2.4.1</xunitrunnervisualstudio>
+    <xunitextensibilityexecution>2.4.1</xunitextensibilityexecution>
+    <XunitExtensionsOrdering>1.4.5</XunitExtensionsOrdering>
+  </PropertyGroup>
+
+</Project>
