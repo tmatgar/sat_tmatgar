@@ -2,8 +2,8 @@ using FluentAssertions;
 using Newtonsoft.Json;
 using Sat.Recruitment.Application.Business.Users;
 using Sat.Recruitment.Application.Business.Users.Responses;
-using Sat.Recruitment.FunctionalTest.Config;
 using Sat.Recruitment.FunctionalTest.Extensions;
+using Sat.Recruitment.FunctionalTest.Fixtures;
 using System.Net;
 using System.Threading.Tasks;
 using Xunit;
@@ -13,11 +13,16 @@ namespace Sat.Recruitment.FunctionalTest.Scenarios.Products
     [Collection(TestConstants.SatRecruitmentCollection)]
     public class CreateUserTest
     {
+        private readonly HostFixture _host;
+
+        public CreateUserTest(HostFixture host)
+        {
+            _host = host;
+        }
+
         [Fact]
         public async Task ReturnCreated()
-        {
-            string url = UrlBuilder.UsersUrl.PostCreateUserTestUrl;
-
+        {          
             var request = new CreateUserRequest
             {
                 Name = "Mike",
@@ -27,9 +32,10 @@ namespace Sat.Recruitment.FunctionalTest.Scenarios.Products
                 UserType = "Normal",
                 Money = "124"
             };
-
-            var client = await HostServer.GetClient();
-            var response = await client.PostJsonAsync(url, request);
+           
+            var response = await _host.Server
+                .CreateClient()
+                .PostJsonAsync(UrlBuilder.UsersUrl.PostCreateUserTestUrl, request);
 
             response.EnsureSuccessStatusCode();
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -43,8 +49,6 @@ namespace Sat.Recruitment.FunctionalTest.Scenarios.Products
         [Fact]
         public async Task ReturnDuplicated()
         {
-            string url = UrlBuilder.UsersUrl.PostCreateUserTestUrl;
-
             var request = new CreateUserRequest
             {
                 Name = "Agustina",
@@ -55,8 +59,9 @@ namespace Sat.Recruitment.FunctionalTest.Scenarios.Products
                 Money = "124"
             };
 
-            var client = await HostServer.GetClient();
-            var response = await client.PostJsonAsync(url, request);
+            var response = await _host.Server
+                .CreateClient()
+                .PostJsonAsync(UrlBuilder.UsersUrl.PostCreateUserTestUrl, request);
 
             response.StatusCode.Should().Be(HttpStatusCode.Conflict);
         }
