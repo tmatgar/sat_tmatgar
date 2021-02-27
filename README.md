@@ -1,6 +1,6 @@
-# SAT Recruitment
+# SAT
 
-El objetivo de esta prueba es refactorizar el código de este proyecto. Se puede realizar cualquier cambio que considere necesario en el código y en los test.
+El objetivo es refactorizar el código de este proyecto. Se puede realizar cualquier cambio que considere necesario en el código y en los test.
 
 # Getting Started
 
@@ -19,16 +19,16 @@ La solución consta de una parte: _back_, integrada en una aplicación ASP.NET C
 
 ## Solución en BACK
 
-Como ya mencionamos anteriormente la solución de Back está desarrollada en ASP.NET Core 3.1. La solución _Sat.Recruitment.sln_ se encuentra en la raíz del directorio está separada en los diferentes proyectos _.csproj_. Estos proyectos se encuentran separados por capas en su correspondiente carpeta a partir de _src_, excepto los tests, que tienen su propia carpeta _test_. Las capas de la aplicación son:
+Como ya mencioné anteriormente la solución está desarrollada en ASP.NET Core 3.1. La solución _Sat.Recruitment.sln_ se encuentra en la raíz del directorio está separada en los diferentes proyectos _.csproj_. Estos proyectos se encuentran separados por capas en su correspondiente carpeta a partir de _src_, excepto los tests, que tienen su propia carpeta _test_. Las capas de la aplicación son:
 
 * __Host__: ESTABLECER COMO PROYECTO DE INICIO. Es la capa que se encarga del despliegue del proyecto. Aquí tendremos todo lo relativo a la puesta en marcha de los diferentes entornos.
 * __Api__: Es la capa de la entrada y respuesta de las peticiones HTTP. Por tanto, aquí tendremos lo relativo a la configuración del _pipeline_ de ASP.NET Core que no tenga que ver con el despliegue y si con nuestra aplicación. También será donde encontremos los controladores de ASP.NET Core.
 * __Application__: Esta es la capa de negocio. Aquí implementaremos la acción de negocio correspondiente a la petición que nos han enviado. Estarán los _handlers_ de _mediatr_ para realizar la o las operaciones de negocio correspondientes. También se encontrarán los validadores de entrada de las _request_. Aunque sea la capa de negocio de la aplicación, la implementación de las operaciones de negocio es están en el Dominio, en los objetos de las entidades de Dominio.
-* __Domain__: Es la capa donde tendremos nuestros Objetos de Dominio. Representa la abstracción de nuestro negocio. Es importante que tratemos de llevar aquí todo el código relativo al negocio en su objeto correspondiente.
+* __Domain__: Es la capa donde tendremos nuestros Objetos de Dominio. Representa la abstracción de nuestro negocio.
 * __Infrastructure__: La capa donde tendremos las operaciones del almacenamiento de nuestros datos, en este caso la base de datos. Está separada en dos partes: Data y Statements.
   * __Data__: Repositorio genérico para acceso a la base de datos (en este caso un fichero .txt)
   * __Statements__: Operaciones contra la base de datos.
-* __Tests__: Por último en la carpeta test se encuentran los tests de la aplicación. Los tests que se han diseñado para la aplicación son funcionales y prueban todo a partir del API de la aplicación.
+* __Tests__: Por último en la carpeta test se encuentran los tests de la aplicación. Los tests que he diseñado para la aplicación son funcionales y prueban todo a partir del API de la aplicación.
 
 ### Requisitos
 
